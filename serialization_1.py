@@ -44,6 +44,22 @@ date_json = {
 }
 
 import json
+fisier_json = "datele_mele.json"
 
-pretty_json_string = json.dumps(date_json, indent= 2)
-print(pretty_json_string)
+# #reprezentarea "frumoasa"/usor de citit a unui dictionar json
+# pretty_json_string = json.dumps(date_json, indent= 2)
+# print(pretty_json_string)
+#
+# #scrierea unui json intr-un fisier cu extensia .json
+
+# with open(fisier_json,"w") as file:
+#     json.dump(date_json, file)
+
+with open(fisier_json, "r") as file:
+    date_citite = json.load(file)
+
+print(date_citite)
+print(type(date_citite))
+print('\n')
+print(json.dumps(date_citite, indent=2))
+
