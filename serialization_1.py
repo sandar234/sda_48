@@ -13,12 +13,37 @@
 # print(type(datele))
 # print(datele)
 
-import csv
+# import csv
+#
+# coloane = ['C1','C2']
+# data = [{'C1':1,'C2':2},{'C1':3,'C2':4}]
+#
+# with open('out_dict.csv', 'w') as c:
+#     write = csv.DictWriter(c, fieldnames=coloane)
+#     write.writeheader()
+#     write.writerows(data)
 
-coloane = ['C1','C2']
-data = [{'C1':1,'C2':2},{'C1':3,'C2':4}]
+date_json = {
+"studenti":[
+{"nume":"Ion",
+'prenume':"Ionescu",
+"adresa":{
+"oras":"Bucuresti",
+"strda":"Calea Victoriei",
+"numar":123
+},
+"nr tel":"4078541112"
+},
+{"nume":"Vasile",
+'prenume':"Vasilescu",
+"adresa":{
+"oras":"Iasi","strda":"Calea Liberatii","numar":1234
+},"nr tel":"407854143563"
+}
+]
+}
 
-with open('out_dict.csv', 'w') as c:
-    write = csv.DictWriter(c, fieldnames=coloane)
-    write.writeheader()
-    write.writerows(data)
+import json
+
+pretty_json_string = json.dumps(date_json, indent= 2)
+print(pretty_json_string)
